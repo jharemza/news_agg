@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Feed</title>
+</head>
+<body>
+    <h1>Market Risk</h1>
+    {% for article in articles %}
+
+    <b><a href={{ article.get("link") }} target="_blank">
+            {{ article.get("title").split(' - ')[0] }}
+        </a>
+        &nbsp;&nbsp;
+        <a href={{ article.get("source").get("href") }} target="_blank">
+            {{ article.get("source").get("title") }}
+        </a>
+        &nbsp;&nbsp;
+        {{ article.get("published") }}
+    </b>
+        <br/>
+
+    {% endfor %}
+
+</body>
+</html>
